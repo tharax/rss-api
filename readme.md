@@ -6,10 +6,15 @@
 
 ## To Use
 
-* GET http://localhost:8000/api/feeds
+* To get a list of current RSS feeds subscribed to:
 
-* PUT http://localhost:8000/api/feeds
-Example Body:
+```GET http://localhost:8000/api/feeds```
+
+* To add, or edit, an existing RSS feed. If you don't provide an ID it will add a new one. If you do provide an ID it will edit the existing feed:
+
+```PUT http://localhost:8000/api/feeds```
+
+_Example Body:_
 ```
 {
     "name": "Reuters Tech",
@@ -19,11 +24,23 @@ Example Body:
 }
 ```
 
+* To get a list of all articles for all feeds:
 
-* GET http://localhost:8000/api/articles
-* GET http://localhost:8000/api/articles/technology
-* GET http://localhost:8000/api/articles/technology/BBC
-* GET http://localhost:8000/api/articles?sort=date
+``` GET http://localhost:8000/api/articles```
+
+* To filter by category, or provider:
+
+```GET http://localhost:8000/api/articles/technology```
+
+```GET http://localhost:8000/api/articles/technology/BBC```
+
+```GET http://localhost:8000/api/articles/{category}/{provider}```
+
+* To sort by date published
+
+```GET http://localhost:8000/api/articles?sort=date```
+
+```GET {URL}?sort=date```
 
 ## Todo
 
